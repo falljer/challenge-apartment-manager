@@ -165,7 +165,7 @@ Manages users and roles in the system.
         "name": "Admin",
         "email": "admin@test.com",
         "roles": ["admin"],
-        "created_at": "2020-03-18T12:32:29.000000Z"
+        "created_at": "2020-03-18T12:32:29.000000Z",
         "updated_at": "2020-03-18T12:32:29.000000Z"
     }
 }
@@ -200,7 +200,7 @@ Manages users and roles in the system.
         "name": "Admin",
         "email": "admin@test.com",
         "roles": ["admin"],
-        "created_at": "2020-03-18T12:32:29.000000Z"
+        "created_at": "2020-03-18T12:32:29.000000Z",
         "updated_at": "2020-03-18T12:32:29.000000Z"
     }
 }
@@ -311,7 +311,7 @@ Manages apartments in the system.
             "email": "janetherealtor@test.com", 
             "roles": ["realtor"]
         },
-        "created_at": "2020-03-18T09:39:15.000000Z"
+        "created_at": "2020-03-18T09:39:15.000000Z",
         "updated_at": "2020-03-18T09:39:15.000000Z"
     }
 }
@@ -360,7 +360,7 @@ Manages apartments in the system.
             "email": "janetherealtor@test.com", 
             "roles": ["realtor"]
         },
-        "created_at": "2020-03-18T09:39:15.000000Z"
+        "created_at": "2020-03-18T09:39:15.000000Z",
         "updated_at": "2020-03-18T09:39:15.000000Z"
     }
 }
@@ -432,7 +432,7 @@ Manages apartments in the system.
                 "email": "janetherealtor@test.com", 
                 "roles": ["realtor"]
             },
-            "created_at": "2020-03-18T09:39:15.000000Z"
+            "created_at": "2020-03-18T09:39:15.000000Z",
             "updated_at": "2020-03-18T09:39:15.000000Z"
         },
         {
@@ -450,7 +450,7 @@ Manages apartments in the system.
                 "email": "janetherealtor@test.com", 
                 "roles": ["realtor"]
             },
-            "created_at": "2020-03-18T09:39:15.000000Z"
+            "created_at": "2020-03-18T09:39:15.000000Z",
             "updated_at": "2020-03-18T09:39:15.000000Z"
         }
     ]

@@ -10,4 +10,10 @@ class Apartment extends Model
     {
         return $this->belongsTo('App\User', 'realtor_id');
     }
+
+    public function lookupGeoLocation($address)
+    {
+        $this->latitude = 0;
+        $this->longitude = 0;
+    }
 }

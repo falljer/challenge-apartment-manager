@@ -13,7 +13,16 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\ApartmentCreate::class,
+        Commands\ApartmentList::class,
+        Commands\ApartmentRemove::class,
+        Commands\ApartmentUpdate::class,
+        Commands\UserCreate::class,
+        Commands\UserList::class,
+        Commands\UserRemove::class,
+        Commands\UserSuspend::class,
+        Commands\UserUnsuspend::class,
+        Commands\UserUpdate::class
     ];
 
     /**
