@@ -137,3 +137,322 @@ Permanently remove a user from the system.
 `php artisan user:remove --username<username>`
 
 ## API Documentation
+
+* A * next to a paramater type means required example: `[string*]` (no * means it is optional `[integer]`).
+* <> around a parameter type means the API is expecting an array of values.  Example `[< integer >]`.
+
+### Users API
+
+Manages users and roles in the system.
+
+#### Create User
+
+* URL: POST /api/users
+* URL Params: (none)
+* Data Params:
+    * name=[string*]
+    * email=[string*]
+    * password=[string*]
+    * roles=[< integer, integer, ... >]
+    
+* Success Response:
+
+```json
+{
+    status: "success",
+    data: {
+        "id": 1,
+        "name": "Admin",
+        "email": "admin@test.com",
+        "roles": ["admin"],
+        "created_at": "2020-03-18T12:32:29.000000Z"
+        "updated_at": "2020-03-18T12:32:29.000000Z"
+    }
+}
+```
+
+* Error Response:
+
+```json
+{
+    "status": "error",
+    "message": "Error Message"
+}
+```
+
+#### Update User
+
+* URL: PUT/PATCH /api/users/{user_id}
+* URL Params: (none)
+* Data Params:
+    * name=[string*]
+    * email=[string*]
+    * password=[string*]
+    * roles=[< integer, integer, ... >]
+    
+* Success Response:
+
+```json
+{
+    status: "success",
+    data: {
+        "id": 1,
+        "name": "Admin",
+        "email": "admin@test.com",
+        "roles": ["admin"],
+        "created_at": "2020-03-18T12:32:29.000000Z"
+        "updated_at": "2020-03-18T12:32:29.000000Z"
+    }
+}
+```
+
+* Error Response:
+
+```json
+{
+    "status": "error",
+    "message": "Error Message"
+}
+```
+
+#### Remove User
+
+* URL: DELETE /api/users/{user_id}
+* URL Params: (none)
+* Data Params: (none)
+    
+* Success Response:
+
+```json
+(No content, returns "204 No Content" HTTP status)
+```
+
+* Error Response:
+
+```json
+{
+    "status": "error",
+    "message": "Error Message"
+}
+```
+
+#### Search Users
+
+* URL: GET /api/users
+* URL Params:
+    * name=[string]
+    * email=[string]
+    * roles=[< integer, integer, ...>]
+    * q=[string]
+* Data Params: (none)
+
+* Success Response:
+
+```json
+{
+    "status": "success",
+    "data": [
+        {
+            "id": 1,
+            "name": "Admin",
+            "email": "admin@test.com",
+            "roles": ["admin"],
+            "created_at": "2020-03-18T12:32:29.000000Z",
+            "updated_at": "2020-03-18T12:32:29.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "Johnny Client",
+            "email": "johnnyc@test.com",
+            "roles": ["client"],
+            "created_at": "2020-03-18T12:32:29.000000Z",
+            "updated_at": "2020-03-18T12:32:29.000000Z"
+        }
+    ]
+}
+```
+
+
+### Apartments API
+
+Manages apartments in the system.
+
+#### Create Apartment
+
+* URL: POST /api/apartments
+* URL Params: (none)
+* Data Params:
+    * name=[string*]
+    * description=[string]
+    * floor_area_size=[integer]
+    * price_per_month=[integer]
+    * number_of_rooms=[integer]
+    * latitude=[double]
+    * longitude=[double]
+    * realtor_id=[integer]
+    
+* Success Response:
+
+```json
+{
+    status: "success",
+    data: {
+        "id": 1,
+        "name": "Beautiful Ranch-Style 2 Bedroom",
+        "description": "Ranch style single family home",
+        "floor_area_size": "1500",
+        "price_per_month": "2100",
+        "number_of_rooms": 2,
+        "latitude": 0,
+        "longitude": 0,
+        "realtor": {
+            "id": 3, 
+            "name": "Jane Realtor", 
+            "email": "janetherealtor@test.com", 
+            "roles": ["realtor"]
+        },
+        "created_at": "2020-03-18T09:39:15.000000Z"
+        "updated_at": "2020-03-18T09:39:15.000000Z"
+    }
+}
+```
+
+* Error Response:
+
+```json
+{
+    "status": "error",
+    "message": "Error Message"
+}
+```
+
+#### Update Apartment
+
+* URL: PUT/PATCH /api/apartments/{apartment_id}
+* URL Params: (none)
+* Data Params:
+    * name=[string*]
+    * description=[string]
+    * floor_area_size=[integer]
+    * price_per_month=[integer]
+    * number_of_rooms=[integer]
+    * latitude=[double]
+    * longitude=[double]
+    * realtor_id=[integer]
+    
+* Success Response:
+
+```json
+{
+    status: "success",
+    data: {
+        "id": 1,
+        "name": "Beautiful Ranch-Style 2 Bedroom",
+        "description": "Ranch style single family home",
+        "floor_area_size": "1500",
+        "price_per_month": "2100",
+        "number_of_rooms": 2,
+        "latitude": 0,
+        "longitude": 0,
+        "realtor": {
+            "id": 3, 
+            "name": "Jane Realtor", 
+            "email": "janetherealtor@test.com", 
+            "roles": ["realtor"]
+        },
+        "created_at": "2020-03-18T09:39:15.000000Z"
+        "updated_at": "2020-03-18T09:39:15.000000Z"
+    }
+}
+```
+
+* Error Response:
+
+```json
+{
+    "status": "error",
+    "message": "Error Message"
+}
+```
+
+#### Remove Apartment
+
+* URL: DELETE /api/apartments/{apartment_id}
+* URL Params: (none)
+* Data Params: (none)
+    
+* Success Response:
+
+```json
+(No content, returns "204 No Content" HTTP status)
+```
+
+* Error Response:
+
+```json
+{
+    "status": "error",
+    "message": "Error Message"
+}
+```
+
+#### Search Apartments
+
+* URL: GET /api/apartments
+* URL Params:
+    * name=[string*]
+    * description=[string]
+    * floor_area_size=[integer]
+    * price_per_month=[integer]
+    * number_of_rooms=[integer]
+    * latitude=[double]
+    * longitude=[double]
+    * realtor_id=[integer]
+    * q=[string]
+* Data Params: (none)
+
+* Success Response:
+
+```json
+{
+    "status": "success",
+    "data": [
+        {
+            "id": 1,
+            "name": "Beautiful Ranch-Style 2 Bedroom",
+            "description": "Ranch style single family home",
+            "floor_area_size": "1500",
+            "price_per_month": "2100",
+            "number_of_rooms": 2,
+            "latitude": 0,
+            "longitude": 0,
+            "realtor": {
+                "id": 3, 
+                "name": "Jane Realtor", 
+                "email": "janetherealtor@test.com", 
+                "roles": ["realtor"]
+            },
+            "created_at": "2020-03-18T09:39:15.000000Z"
+            "updated_at": "2020-03-18T09:39:15.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "3 Bedroom",
+            "description": "Ranch style single family home",
+            "floor_area_size": "1900",
+            "price_per_month": "2700",
+            "number_of_rooms": 3,
+            "latitude": 0,
+            "longitude": 0,
+            "realtor": {
+                "id": 3, 
+                "name": "Jane Realtor", 
+                "email": "janetherealtor@test.com", 
+                "roles": ["realtor"]
+            },
+            "created_at": "2020-03-18T09:39:15.000000Z"
+            "updated_at": "2020-03-18T09:39:15.000000Z"
+        }
+    ]
+}
+```
