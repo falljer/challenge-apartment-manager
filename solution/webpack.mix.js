@@ -31,6 +31,8 @@ mix.webpackConfig({
             'vue$': path.resolve(__dirname, 'node_modules/vue/dist/vue.esm.js'),
             'vue-axios$': path.resolve(__dirname, 'node_modules/vue-axios/dist/vue-axios.es5.js'),
             '@websanova': path.resolve(__dirname, 'node_modules/@websanova'),
+            '@babel/runtime/regenerator': path.resolve(__dirname, 'node_modules/@babel/runtime/regenerator/index.js'),
+            'regenerator-runtime$': path.resolve(__dirname, 'node_modules/regenerator-runtime/runtime.js'),
             '@models': path.resolve(__dirname, 'resources/js/models/'),
             '@services': path.resolve(__dirname, 'resources/js/services/'),
             '@sections': path.resolve(__dirname, 'resources/js/sections/'),

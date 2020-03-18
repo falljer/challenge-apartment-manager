@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Authentication
 Route::group([
 
     'middleware' => 'api',
@@ -24,7 +25,12 @@ Route::group([
     Route::post('register', 'AuthController@register');
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
+    Route::get('refresh', 'AuthController@refresh');
     Route::get('user', 'AuthController@me');
 
 });
+
+// Users
+Route::resource('users', 'UserController')->except(['create', 'edit']);
+
+// Apartments
