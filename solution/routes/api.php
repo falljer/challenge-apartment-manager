@@ -34,3 +34,4 @@ Route::group([
 Route::resource('users', 'UserController')->except(['create', 'edit']);
 
 // Apartments
+Route::resource('apartments', 'ApartmentController')->except(['create', 'edit']);

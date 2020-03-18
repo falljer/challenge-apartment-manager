@@ -14,8 +14,12 @@
         created() {
             const { users } = axios.get('/users');
             const { user } = axios.get('/users/1');
+            const { apartments } = axios.get('/apartments');
+            const { apartment } = axios.get('/apartments/1');
             console.log(users);
             console.log(user);
+            console.log(apartments);
+            console.log(apartment);
         },
         methods: {
 
