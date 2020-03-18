@@ -108,33 +108,51 @@ Of course, new clients can be created using the registration page (linked from t
 
 #### Create a new user
 
-Creates a new user in the database with the specified role (for anything not provided on the command-line, an interactive script will ask for the remaining details.)
+Creates a new user in the database.
 
-`php artisan user:create [--username=<username>] [--password=<password>] [--role=<admin|realtor|client>]`
+`php artisan user:create`
 
 #### Update a user
 
-Updates a user's password or role.
+Updates a user's information.
 
-`php artisan user:update --username=<username> [--password=<password>] [--role=<admin|realtor|client>]`
+`php artisan user:update`
 
 #### Suspend a user
 
 Disable the user's login temporarily.
 
-`php artisan user:suspend --username=<username>`
+`php artisan user:suspend {user_id}`
 
 #### Unsuspend a user
 
 Re-enable a suspended user.
 
-`php artisan user:unsuspend --username=<username>`
+`php artisan user:unsuspend {user_id}`
 
 #### Remove a user
 
 Permanently remove a user from the system.
 
-`php artisan user:remove --username<username>`
+`php artisan user:remove`
+
+#### Create a new apartment
+
+Creates a new apartment in the database.
+
+`php artisan apartment:create`
+
+#### Update an apartment
+
+Updates an apartment.
+
+`php artisan apartment:update`
+
+#### Remove an apartment
+
+Permanently removes an apartment from the system.
+
+`php artisan apartment:remove`
 
 ## API Documentation
 
