@@ -1,19 +1,23 @@
 <template>
-    <div>
-        <div class="alert alert-danger" v-if="error">
-            <p>There was an error, unable to sign in with those credentials.</p>
+    <div class="card">
+        <h3 class="card-header">Login</h3>
+        <div class="card-body">
+            <div class="alert alert-danger" v-if="error">
+                <span>There was an error, unable to sign in with those credentials.</span>
+            </div>
+            <form autocomplete="off" @submit.prevent="login" method="post">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" v-model="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
         </div>
-        <form autocomplete="off" @submit.prevent="login" method="post">
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" v-model="password" required>
-            </div>
-            <button type="submit" class="btn btn-default">Sign in</button>
-        </form>
+        <div class="card-footer">Or, if you need to register, <router-link :to="{name: 'register'}">you may do so here</router-link></div>
     </div>
 </template>
 
@@ -40,7 +44,7 @@
                     },
                     rememberMe: true,
                     redirect: '/dashboard',
-                    fetchUser: true,
+                    fetchUser: true
                 });
             },
         }

@@ -16,7 +16,10 @@ Vue.use(VueAxios, axios);
 Vue.use(VueAuth, {
     auth: config.authToken,
     http: config.authHttp,
-    router: config.authRouter
+    router: config.authRouter,
+    parseUserData: function(data) {
+        return data.data;
+    }
 });
 Vue.config.devtools = true;
 Vue.config.debug = true;

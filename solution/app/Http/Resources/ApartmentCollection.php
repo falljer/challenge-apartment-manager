@@ -14,9 +14,6 @@ class ApartmentCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return [
-            'status' => 'success',
-            'data' => $this->collection
-        ];
+        return $this->collection->toArray();
     }
 }

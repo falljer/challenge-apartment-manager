@@ -64,10 +64,18 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json([
-            'status' => 'success',
-            'data' => auth()->user()
-        ]);
+        $user = new \App\Http\Resources\User(auth()->user());
+        if($user)
+            return response()->json([
+                'status' => 'success',
+                'data' => $user
+            ]);
+
+        else
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Not logged in!'
+            ]);
     }
 
     /**

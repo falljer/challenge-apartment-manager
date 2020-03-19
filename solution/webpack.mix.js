@@ -30,6 +30,7 @@ mix.webpackConfig({
         alias: {
             'vue$': path.resolve(__dirname, 'node_modules/vue/dist/vue.esm.js'),
             'vue-axios$': path.resolve(__dirname, 'node_modules/vue-axios/dist/vue-axios.es5.js'),
+            'vue-mc$': path.resolve(__dirname, 'node_modules/vue-mc/vue-mc.es.js'),
             '@websanova': path.resolve(__dirname, 'node_modules/@websanova'),
             '@babel/runtime/regenerator': path.resolve(__dirname, 'node_modules/@babel/runtime/regenerator/index.js'),
             'regenerator-runtime$': path.resolve(__dirname, 'node_modules/regenerator-runtime/runtime.js'),
