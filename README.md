@@ -65,6 +65,12 @@ DB_USERNAME=rental_management
 DB_PASSWORD=my-strong-password-here
 ```
 
+While you have the file open, you may want to add your GOOGLE_API_KEY. (https://developers.google.com/maps/documentation/javascript/geocoding)
+
+```bash
+GOOGLE_API_KEY=<replace with app key from Google>
+```
+
 6\. Populate the database:
 
 (Run the remaining commands from the solution folder in this repository)

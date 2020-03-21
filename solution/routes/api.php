@@ -35,3 +35,8 @@ Route::resource('users', 'UserController')->except(['create', 'edit']);
 
 // Apartments
 Route::resource('apartments', 'ApartmentController')->except(['create', 'edit']);
+
+// Misc
+Route::get('gapi', function() {
+    return response(env('GOOGLE_API_KEY'));
+});

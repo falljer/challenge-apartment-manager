@@ -38,6 +38,7 @@ mix.webpackConfig({
             '@services': path.resolve(__dirname, 'resources/js/services/'),
             '@sections': path.resolve(__dirname, 'resources/js/sections/'),
             '@components': path.resolve(__dirname, 'resources/js/components/'),
+            '@util': path.resolve(__dirname, 'resources/js/util')
         },
         extensions: ['*', '.js', '.vue', '.json']
     }
