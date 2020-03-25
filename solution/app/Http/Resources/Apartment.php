@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\User;
 use App\Http\Resources\User as UserResource;
@@ -27,6 +28,9 @@ class Apartment extends JsonResource
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
             'realtor' => new UserResource(User::find($this->realtor_id)),
+            'realtors' => User::whereHas('roles', function(Builder $query) {
+                $query->where('name', 'realtor');
+            })->get(),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

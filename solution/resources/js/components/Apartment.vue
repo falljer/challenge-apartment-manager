@@ -7,16 +7,18 @@
             <div class="card-body">
                 <div class="row" v-if="apartment.id">
                     <div class="col">
-                        <p>{{ apartment.description }}</p>
-                        <div id="gmap" style="width: 100%; height: 250px;"></div>
+                        <div id="gmap" style="width: 100%; height: 300px;"></div>
                     </div>
                     <div class="col">
+                        <h6>Description</h6>
+                        <p>{{ apartment.description }}</p>
+                        <h6>More Information</h6>
                         <p>
-                            Floor Area: {{ apartment.floor_area_size }} sqft<br />
-                            Monthly Price: ${{ apartment.price_per_month }}<br />
+                            Floor Area: {{ apartment.floor_area_size }}<br />
+                            Monthly Price: {{ apartment.price_per_month }}<br />
                             Number of Rooms: {{ apartment.number_of_rooms }}
                         </p>
-                        <p class="lead" v-if="apartment.realtor">For more information, contact {{ apartment.realtor.name }}</p>
+                        <p class="lead">For more information, please contact {{ apartment.realtor.name }}</p>
                     </div>
                 </div>
             </div>
